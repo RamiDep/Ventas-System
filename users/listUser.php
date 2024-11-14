@@ -13,17 +13,53 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">Lista de Usuarios</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-             
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /.content-header -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+         <div class="col-md-6">
+            <div class="card card-success collapsed-card">
+              <div class="card-header">
+                <h3 class="card-title">Lista de usuarios</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body" style="display: none;">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <td>Id</td>
+                      <td>Nombre</td>
+                      <td>Correo</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php 
+                    include("../app/controllers/Users/table_users.php"); 
+                    foreach($usuarios as $usuario){
+                  ?>
+                    <tr>
+                      <td><?= $usuario['id_users']?></td>
+                      <td><?= $usuario['names']?></td>
+                      <td><?= $usuario['email']?></td>
+                    </tr>
+                  <?php } ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
 
 <?php 
     include("../template/foot.php");
