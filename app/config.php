@@ -15,3 +15,6 @@ try{
     //print_r($e);
     echo "No se pudo conectar a la base datos.";
 }
+
+date_default_timezone_set("America/Mexico_City");
+$date_create = date("Y-m-d H:i:s");

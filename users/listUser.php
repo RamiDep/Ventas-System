@@ -17,11 +17,13 @@
         </div>
       </div>
     </div>
+    
     <div class="content">
       <div class="container-fluid">
         <div class="row">
+
          <div class="col-md-6">
-            <div class="card card-success collapsed-card">
+            <div class="card card-success card-outline">
               <div class="card-header">
                 <h3 class="card-title">Lista de usuarios</h3>
                 <div class="card-tools">
