@@ -17,9 +17,14 @@ include("../../config.php");
 
             $name = $_POST['txt_name'];
             $email = $_POST['txt_email'];
-            $password = $_POST['txt_password'];
+            $password = password_hash($_POST['txt_password'], PASSWORD_DEFAULT); 
             $date_create_ = $date_create;
             $insertSQL->execute();
+
+            session_start();
+            $msj = "Usuario creado satisfactoriamente.";
+            $_SESSION['msj'] = $msj;
+            header('Location: '.$url);
 
             // insert a row
             //   $firstname = "John";
@@ -29,7 +34,7 @@ include("../../config.php");
         }else
             echo "La contraseña no coincide";
     }else 
-        echo "No existen valoes";
+        echo "No existen valores";
 
    
 

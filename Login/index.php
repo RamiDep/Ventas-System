@@ -22,7 +22,7 @@
 <?php 
   session_start();
   if(isset($_SESSION['msj'])){
-  $response = $_SESSION['msj'];
+    $response = $_SESSION['msj'];
 ?>
     <script>
       Swal.fire({

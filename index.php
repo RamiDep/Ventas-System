@@ -1,6 +1,7 @@
 <?php
   include("app/config.php");
   session_start();
+  
   if(!isset($_SESSION['usuario']))
       header('Location:'.$url.'Login');
 
@@ -9,7 +10,7 @@
   $query = $pdo->prepare($sql);
   $query->execute();
 
-  $usuarios = $query->fetchAll(PDO ::FETCH_ASSOC);
+  $usuarios = $query->fetchAll(PDO :: FETCH_ASSOC);
 
 foreach ($usuarios as $usuario){
     $user = $usuario['names'];
@@ -39,6 +40,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 </head>
 <body class="hold-transition sidebar-mini">
+  
+<?php 
+
+  if(isset($_SESSION['msj'])){
+    $response = $_SESSION['msj'];
+?>
+    <script>
+      Swal.fire({
+        icon: "success",
+        title: "Exito",
+        text: "<?=$response?>",
+        timer: 2000
+      });
+    </script>
+<?php
+  }
+?>
+    
+
 <div class="wrapper">
 
   <!-- Navbar -->
